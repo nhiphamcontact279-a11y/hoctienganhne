@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Xóa nạn mù tiếng Anh</title>
+<style>
+:root{--bg:#fff;--card:#fff;--tx:#3b2030;--mut:#8a6577;--bd:#f7c6dc;--ac:#e8559a;--acx:#fff;--soft:#ffe3ef;--ok:#2b7a4b;--er:#b3261e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 "Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+main{max-width:860px;margin:0 auto;padding:16px 16px 48px}
+header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+#pan{width:92px;height:84px;flex:none;animation:bob 2.6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-5px) rotate(-2deg)}}
+@media (prefers-reduced-motion:reduce){#pan,.zoo svg{animation:none}}
+.zoo{display:flex;gap:14px;justify-content:center;margin:2px 0 10px}
+.zoo svg{width:76px;height:76px;cursor:pointer;transform-origin:50% 90%;overflow:visible}
+.zoo svg:nth-child(1){animation:wob 1.4s ease-in-out infinite}
+.zoo svg:nth-child(2){animation:sq 1.1s ease-in-out infinite}
+.zoo svg:nth-child(3){animation:wob 1.8s ease-in-out infinite reverse}
+.zoo svg:nth-child(4){animation:hop 1s ease-in-out infinite}
+.zoo svg:active{transform:scale(1.25) rotate(8deg)}
+@keyframes wob{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg) translateY(-4px)}}
+@keyframes sq{0%,100%{transform:scale(1,1)}50%{transform:scale(1.14,.84)}}
+@keyframes hop{0%,100%{transform:translateY(0) scaleY(.9)}40%{transform:translateY(-14px) scaleY(1.1)}}
+@media (prefers-reduced-motion:reduce){.zoo svg{animation:none!important}}
+h1{font-size:1.55rem;margin:0;line-height:1.2;color:var(--ac)}
+.bub{position:relative;background:var(--card);border:2px solid var(--bd);border-radius:16px;padding:6px 12px;margin-top:6px;font-size:.92rem;display:inline-block}
+.tabs{display:flex;gap:8px;margin:10px 0 14px}
+.tabs button{flex:1;border-radius:999px;font-weight:600}
+.tabs button.on{background:var(--ac);color:var(--acx);border-color:var(--ac)}
+.sub{color:var(--mut);margin:0 0 14px;font-size:.93rem}
+#drop{border:2px dashed var(--bd);border-radius:18px;background:var(--card);padding:34px 16px;text-align:center;cursor:pointer;transition:.15s}
+#drop.over{border-color:var(--ac);background:var(--soft)}
+#drop b{display:block;font-size:1.05rem;margin-bottom:4px}
+#drop span{color:var(--mut);font-size:.88rem}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0}
+button{font:inherit;border:2px solid var(--bd);background:var(--card);color:var(--tx);border-radius:12px;padding:8px 14px;cursor:pointer}
+button.pri{background:var(--ac);color:var(--acx);border-color:var(--ac);font-weight:600}
+button:disabled{opacity:.5;cursor:default}
+.spacer{flex:1}
+#status{color:var(--mut);font-size:.9rem}
+.file,.card{background:var(--card);border:2px solid var(--bd);border-radius:16px;margin:12px 0;overflow:hidden}
+.fh{display:flex;gap:10px;align-items:center;padding:10px 14px;border-bottom:2px solid var(--bd);flex-wrap:wrap}
+.fn{font-weight:600;word-break:break-all;flex:1;min-width:140px}
+.tag{font-size:.78rem;color:var(--mut)}
+.tag.ok{color:var(--ok)}.tag.er{color:var(--er)}
+.fh button{padding:4px 10px;font-size:.85rem}
+.out{padding:12px 14px;white-space:pre-wrap;word-wrap:break-word;max-height:520px;overflow:auto;font-size:.97rem}
+.thumb{max-width:100%;max-height:220px;display:block;margin:10px 14px 0;border-radius:8px;border:1px solid var(--bd)}
+.prog{height:4px;background:var(--bd)}.prog i{display:block;height:100%;width:0;background:var(--ac);transition:width .25s}
+#note,#dnote{display:none;margin-top:14px;padding:10px 14px;border-radius:12px;border:2px solid var(--er);color:var(--er)}
+.sr{display:flex;gap:8px}
+#q{flex:1;min-width:0;font:inherit;font-size:1.1rem;padding:11px 14px;border-radius:14px;border:2px solid var(--bd);background:var(--card);color:var(--tx)}
+#q:focus{outline:none;border-color:var(--ac)}
+.hist{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+.hist button{padding:2px 11px;font-size:.85rem;border-radius:999px;background:var(--soft)}
+.card{padding:16px}
+.wd{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.wd h2{margin:0;font-size:1.7rem;color:var(--ac)}
+.ipa{color:var(--mut)}
+.wd button{padding:2px 10px}
+.pos{margin-top:14px}
+.pos b{display:inline-block;background:var(--soft);color:var(--ac);border-radius:999px;padding:1px 12px;font-size:.85rem}
+.pos p{margin:6px 0 2px;font-weight:600}
+.ex{margin:2px 0 2px 12px;padding-left:10px;border-left:3px solid var(--bd);font-size:.95rem}
+.ex i{display:block;color:var(--mut)}
+.syn{margin-top:14px;color:var(--mut);font-size:.93rem}
+.tip{margin-top:14px;background:var(--soft);border-radius:12px;padding:10px 14px;font-size:.93rem}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <svg id="pan" viewBox="0 0 120 110" aria-hidden="true"><g transform="rotate(-6 60 60)">
+<circle cx="26" cy="30" r="17" fill="#f48fb1"/><circle cx="26" cy="31" r="8" fill="#ec407a"/>
+<circle cx="96" cy="24" r="21" fill="#f48fb1"/><circle cx="96" cy="26" r="10" fill="#ec407a"/>
+<ellipse cx="60" cy="64" rx="50" ry="36" fill="#f48fb1"/>
+<ellipse cx="60" cy="82" rx="30" ry="18" fill="#ffd9e8"/>
+<circle cx="40" cy="56" r="15" fill="#fff"/><circle cx="46" cy="62" r="5.5" fill="#2a1420"/>
+<circle cx="80" cy="54" r="10" fill="#fff"/><circle cx="76" cy="52" r="4.5" fill="#2a1420"/>
+<path d="M24 54a16 14 0 0 1 32 0z" fill="#ec407a"/>
+<path d="M66 40L92 34" stroke="#2a1420" stroke-width="4" stroke-linecap="round"/>
+<ellipse cx="60" cy="70" rx="9" ry="6" fill="#2a1420"/>
+<path d="M40 82Q60 94 82 80" stroke="#2a1420" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M56 88Q62 108 72 88Z" fill="#ff5c93" stroke="#2a1420" stroke-width="2.5" stroke-linejoin="round"/>
+</g></svg>
+  <div><h1>Xóa nạn mù tiếng Anh</h1><span class="bub" id="say">Chào bạn! Gõ một từ đi, tui tra liền, hổng lè lưỡi đâu!</span></div>
+</header>
+<div class="zoo" title="Bấm vào các bạn thú nhé">
+<svg viewBox="0 0 100 100" data-s="Thỏ Bông nè! Tui bị lé nhưng đọc từ vựng vẫn không sai chữ nào đâu nha!"><g stroke="#5a3347" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="34" cy="22" rx="9" ry="21" fill="#ffd9e8"/><ellipse cx="80" cy="42" rx="8" ry="19" fill="#ffd9e8" transform="rotate(70 70 48)"/><ellipse cx="50" cy="66" rx="36" ry="25" fill="#fff7fb"/><circle cx="37" cy="58" r="12" fill="#fff"/><circle cx="62" cy="56" r="8" fill="#fff"/><rect x="43" y="73" width="7" height="13" rx="2" fill="#fff"/><rect x="50" y="73" width="7" height="13" rx="2" fill="#fff"/></g><circle cx="41" cy="62" r="4.5" fill="#2a1420"/><circle cx="59" cy="59" r="3.5" fill="#2a1420"/><circle cx="51" cy="70" r="4" fill="#ec407a"/><circle cx="24" cy="72" r="5" fill="#ff80ab" opacity=".7"/></svg>
+<svg viewBox="0 0 100 100" data-s="Meo meo! Mèo Cam nhướn mày nghi ngờ: bạn chắc là từ này viết đúng chính tả không?"><g stroke="#5a3347" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M16 50L18 12L44 30Z" fill="#ffc78f"/><path d="M84 46L90 24L56 30Z" fill="#ffc78f"/><ellipse cx="50" cy="62" rx="38" ry="26" fill="#ffc78f"/><circle cx="36" cy="56" r="11" fill="#fff"/><circle cx="65" cy="59" r="6" fill="#fff"/><path d="M54 44L78 38" stroke-width="4"/><path d="M42 74Q50 68 60 74" fill="none"/><path d="M47 74Q52 98 60 75Z" fill="#ff6f9c"/></g><circle cx="32" cy="51" r="4.5" fill="#2a1420"/><circle cx="67" cy="61" r="2.8" fill="#2a1420"/><path d="M46 67L55 67L50 72Z" fill="#ec407a"/><path d="M8 62L26 64M8 72L26 70M92 62L74 64" stroke="#5a3347" stroke-width="1.8"/></svg>
+<svg viewBox="0 0 100 100" data-s="Gấu Nâu hét lên: HỌC ĐI! Tui đói mà tui còn học nữa là bạn phải học!"><g stroke="#5a3347" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><circle cx="20" cy="32" r="10" fill="#d9a974"/><circle cx="78" cy="26" r="16" fill="#d9a974"/><ellipse cx="50" cy="58" rx="40" ry="33" fill="#d9a974"/><ellipse cx="50" cy="68" rx="19" ry="13" fill="#f6dfc4"/><path d="M36 74Q50 98 64 74Z" fill="#7a1f3d"/><path d="M27 42Q50 33 74 45" stroke-width="5" fill="none"/></g><ellipse cx="50" cy="86" rx="8" ry="4" fill="#ff80ab"/><circle cx="38" cy="52" r="3" fill="#2a1420"/><circle cx="63" cy="52" r="3" fill="#2a1420"/><ellipse cx="50" cy="65" rx="6" ry="4" fill="#2a1420"/></svg>
+<svg viewBox="0 0 100 100" data-s="Ộp ộp! Ếch Xanh lè lưỡi dài một mét, bắt từ khó ăn ngay!"><g stroke="#5a3347" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="50" cy="64" rx="42" ry="26" fill="#9fe0a8"/><circle cx="26" cy="32" r="17" fill="#9fe0a8"/><circle cx="74" cy="22" r="13" fill="#9fe0a8"/><circle cx="26" cy="32" r="11" fill="#fff"/><circle cx="74" cy="22" r="8" fill="#fff"/><path d="M12 64Q50 100 90 64" fill="none" stroke-width="4"/><path d="M46 82Q50 104 60 82Z" fill="#ff6f9c"/></g><circle cx="30" cy="36" r="4.5" fill="#2a1420"/><circle cx="71" cy="20" r="3" fill="#2a1420"/><circle cx="20" cy="66" r="5" fill="#ff80ab" opacity=".7"/></svg>
+</div>
+
+<div class="tabs"><button id="t1" class="on">Tra từ điển</button><button id="t2">Dịch tài liệu</button></div>
+
+<section id="p1">
+  <div class="sr"><input id="q" type="text" placeholder="Gõ từ hoặc cụm từ (Anh hoặc Việt)…" autocomplete="off" autocapitalize="none" spellcheck="false"><button id="look" class="pri">Tra</button></div>
+  <div class="hist" id="hist"></div>
+  <div id="dnote"></div>
+  <div id="res"></div>
+</section>
+
+<section id="p2" hidden>
+  <p class="sub">Hỗ trợ ảnh (PNG, JPG, WEBP), PDF (cả bản scan), Word (.docx), Excel (.xlsx, .xls, .csv), PowerPoint (.pptx) và các file văn bản (.txt, .md, .html, .json, .srt…). Ngôn ngữ gốc được tự nhận diện.</p>
+  <div id="drop" tabindex="0" role="button"><b>Kéo thả file vào đây hoặc bấm để chọn</b><span>Có thể chọn nhiều file cùng lúc</span></div>
+  <input id="pick" type="file" multiple hidden>
+  <div class="bar">
+    <button id="go" class="pri" disabled>Dịch tất cả</button>
+    <button id="stop" disabled>Dừng</button>
+    <button id="clear" disabled>Xóa danh sách</button>
+    <span class="spacer"></span><span id="status"></span>
+  </div>
+  <div id="note"></div>
+  <div id="list"></div>
+</section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+function say(t){$('say').textContent=t}
+document.querySelectorAll('.zoo svg').forEach(s=>s.addEventListener('click',()=>say(s.dataset.s)));
+$('t1').onclick=()=>tab(1);$('t2').onclick=()=>tab(2);
+function tab(n){$('p1').hidden=n!==1;$('p2').hidden=n!==2;$('t1').classList.toggle('on',n===1);$('t2').classList.toggle('on',n===2);say(n===1?'Gõ một từ để mình tra nhé!':'Thả tài liệu vào đây, mình dịch cho!')}
+
+/* ===== TRA TỪ ĐIỂN ===== */
+(function(){
+let sample=null,busy=false,hist=[];
+const q=$('q'),res=$('res'),dn=$('dnote');
+try{hist=JSON.parse(localStorage.getItem('xnmta_hist')||'[]')}catch(e){}
+claude.use('sample').then(s=>{sample=s;if(!s){dn.style.display='block';dn.textContent='Tính năng tra từ chỉ hoạt động khi mở trang này trong Claude.'}}).catch(()=>{});
+function h(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e}
+function drawHist(){const b=$('hist');b.innerHTML='';hist.forEach(w=>{const x=h('button',null,w);x.onclick=()=>{q.value=w;look()};b.appendChild(x)})}
+drawHist();
+const PR='Bạn là từ điển Anh–Việt thân thiện cho người học tiếng Anh. Tra từ hoặc cụm từ sau. Nếu là tiếng Anh thì giải nghĩa sang tiếng Việt; nếu là tiếng Việt thì đưa các từ tiếng Anh tương ứng phù hợp nhất. Chỉ trả về JSON hợp lệ (không markdown, không lời dẫn) đúng dạng: {"word":"từ tiếng Anh chuẩn","ipa":"phiên âm IPA hoặc rỗng","pos":[{"type":"loại từ viết tắt (n, v, adj, adv…)","meaning":"nghĩa tiếng Việt ngắn gọn","examples":[{"en":"câu ví dụ tiếng Anh","vi":"dịch tiếng Việt"}]}],"synonyms":["tối đa 5 từ đồng nghĩa"],"tip":"một mẹo nhớ từ vui, ngắn, hoặc lưu ý dùng sai thường gặp"}. Tối đa 4 loại từ/nghĩa, mỗi nghĩa 1-2 ví dụ. Nếu từ viết sai chính tả, hãy tra từ đúng gần nhất. Từ cần tra: ';
+function speak(w){try{const u=new SpeechSynthesisUtterance(w);u.lang='en-US';u.rate=.9;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}}
+function show(d){
+  res.innerHTML='';
+  const c=h('div','card'),wd=h('div','wd');
+  wd.appendChild(h('h2',null,d.word||q.value));
+  if(d.ipa)wd.appendChild(h('span','ipa',d.ipa));
+  const sp=h('button',null,'🔊');sp.title='Nghe phát âm';sp.onclick=()=>speak(d.word||q.value);wd.appendChild(sp);
+  c.appendChild(wd);
+  (d.pos||[]).forEach(p=>{
+    const b=h('div','pos');b.appendChild(h('b',null,p.type||''));b.appendChild(h('p',null,p.meaning||''));
+    (p.examples||[]).forEach(x=>{const e=h('div','ex',x.en||'');e.appendChild(h('i',null,x.vi||''));b.appendChild(e)});
+    c.appendChild(b);
+  });
+  if(d.synonyms&&d.synonyms.length)c.appendChild(h('div','syn','Đồng nghĩa: '+d.synonyms.join(', ')));
+  if(d.tip)c.appendChild(h('div','tip','💡 '+d.tip));
+  res.appendChild(c);
+}
+async function look(){
+  const w=q.value.trim();
+  if(!w||busy)return;
+  if(!sample){dn.style.display='block';dn.textContent='Tính năng tra từ chỉ hoạt động khi mở trang này trong Claude.';return}
+  busy=true;$('look').disabled=true;dn.style.display='none';say('Đợi mình lật từ điển xíu nha…');res.innerHTML='';
+  try{
+    const r=await sample(PR+w,{modelTier:'quick'});
+    let t=r.text.replace(/```json|```/g,'').trim();const a=t.indexOf('{'),z=t.lastIndexOf('}');
+    const d=JSON.parse(t.slice(a,z+1));
+    show(d);say('Xong rồi nè! Từ này hay đó.');
+    const k=(d.word||w).toLowerCase();hist=[k].concat(hist.filter(x=>x!==k)).slice(0,10);
+    try{localStorage.setItem('xnmta_hist',JSON.stringify(hist))}catch(e){}
+    drawHist();
+  }catch(e){
+    say('Ối, trục trặc rồi…');dn.style.display='block';
+    dn.textContent=e&&e.code==='not_granted'?'Bạn chưa cho phép dùng Claude để tra từ.':e&&e.code==='rate_limited'?'Tra nhanh quá, đợi một lát rồi thử lại nhé.':'Không tra được từ này, thử lại nhé.';
+  }
+  busy=false;$('look').disabled=false;
+}
+$('look').onclick=look;
+q.addEventListener('keydown',e=>{if(e.key==='Enter')look()});
+})();
+
+/* ===== DỊCH TÀI LIỆU ===== */
+(function(){
+const drop=$('drop'),pick=$('pick'),go=$('go'),stopB=$('stop'),clearB=$('clear'),list=$('list'),status=$('status'),note=$('note');
+let items=[],running=false,ctl=null,sample=null,limits=null;
+
+claude.use('sample').then(async s=>{
+  sample=s;
+  if(!s){showNote('Tính năng dịch chỉ hoạt động khi mở trang này trong Claude.');go.disabled=true;return}
+  try{limits=await s.limits()}catch(e){}
+}).catch(()=>{});
+
+function showNote(t){note.style.display='block';note.textContent=t}
+const ERR={not_granted:'Bạn chưa cho phép dùng Claude để dịch.',rate_limited:'Gửi quá nhanh, hãy đợi một lát rồi bấm Dịch lại.',cancelled:'Đã dừng.',prompt_too_large:'Nội dung quá lớn.',images_unavailable:'Không gửi được ảnh trong phiên này.'};
+const errText=e=>ERR[e&&e.code]||('Lỗi: '+((e&&e.message)||'không xác định'));
+
+drop.onclick=()=>pick.click();
+drop.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick.click()}};
+pick.onchange=()=>{add([...pick.files]);pick.value=''};
+['dragenter','dragover'].forEach(n=>drop.addEventListener(n,e=>{e.preventDefault();drop.classList.add('over')}));
+['dragleave','drop'].forEach(n=>drop.addEventListener(n,e=>{e.preventDefault();drop.classList.remove('over')}));
+drop.addEventListener('drop',e=>add([...e.dataTransfer.files]));
+clearB.onclick=()=>{if(running)return;items=[];list.innerHTML='';sync()};
+stopB.onclick=()=>{if(ctl)ctl.abort();items.forEach(i=>i.cancel=true)};
+go.onclick=run;
+
+function sync(){go.disabled=running||!items.some(i=>i.state==='wait')||!sample;stopB.disabled=!running;clearB.disabled=running||!items.length}
+
+function add(files){
+  for(const f of files){
+    const el=document.createElement('div');el.className='file';
+    el.innerHTML='<div class="fh"><span class="fn"></span><span class="tag">Chờ dịch</span><button class="cp" hidden>Sao chép</button><button class="d1" hidden>Tải .txt</button><button class="d2" hidden>Tải .html</button></div><div class="prog"><i></i></div><div class="out" hidden></div>';
+    el.querySelector('.fn').textContent=f.name;
+    list.appendChild(el);
+    const it={f,el,state:'wait',text:'',tag:el.querySelector('.tag'),out:el.querySelector('.out'),bar:el.querySelector('.prog i')};
+    el.querySelector('.cp').onclick=async()=>{try{await navigator.clipboard.writeText(it.text);it.tag.textContent='Đã sao chép'}catch(e){it.tag.textContent='Không sao chép được'}};
+    el.querySelector('.d1').onclick=()=>save(it,'txt');
+    el.querySelector('.d2').onclick=()=>save(it,'html');
+    items.push(it);
+  }
+  sync();
+}
+
+async function save(it,ext){
+  const dl=await claude.use('downloads').catch(()=>null);
+  if(!dl){it.tag.textContent='Không tải được trong phiên này';return}
+  const base=it.f.name.replace(/\.[^.]+$/,'')+' - tiếng Việt';
+  let blob;
+  if(ext==='txt')blob=new Blob([it.text],{type:'text/plain;charset=utf-8'});
+  else{const esc=it.text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    blob=new Blob(['<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><title>'+base.replace(/</g,'')+'</title><style>body{font-family:"Times New Roman",serif;font-size:12pt;max-width:800px;margin:24px auto;white-space:pre-wrap}</style></head><body>'+esc+'</body></html>'],{type:'text/html;charset=utf-8'})}
+  try{await dl.save({filename:base+'.'+ext,data:blob})}catch(e){if(!e||e.code!=='declined')it.tag.textContent='Không lưu được file'}
+}
+
+const PROMPT='Bạn là biên dịch viên chuyên nghiệp. Dịch toàn bộ nội dung dưới đây sang tiếng Việt (tự nhận diện ngôn ngữ gốc). Quy tắc: giữ nguyên bố cục, thứ tự, xuống dòng, đánh số, bảng (dùng dấu | hoặc tab như bản gốc); giữ nguyên số liệu, mã số, ký hiệu, số hiệu tài liệu, địa chỉ email, URL và tên riêng/tên viết tắt; dịch cả chú thích và nội dung trong ảnh; phần nào đã là tiếng Việt thì giữ nguyên. Chỉ trả về bản dịch, không giải thích, không thêm lời dẫn.';
+
+async function ask(body,images,it,base){
+  ctl=new AbortController();
+  const opt={signal:ctl.signal,onText:({text})=>{it.out.textContent=base+text;it.out.scrollTop=it.out.scrollHeight}};
+  if(images)opt.images=images;
+  const r=await sample(PROMPT+'\n\n'+body,opt);
+  return r.text.trim();
+}
+
+function chunk(str,max){
+  const parts=[];let cur='';
+  for(const p of str.split(/\n/)){
+    if(cur.length+p.length+1>max&&cur){parts.push(cur);cur=''}
+    if(p.length>max){for(let i=0;i<p.length;i+=max)parts.push(p.slice(i,i+max));continue}
+    cur+=(cur?'\n':'')+p;
+  }
+  if(cur.trim())parts.push(cur);
+  return parts;
+}
+
+function toBlob(src,w,h,maxSide){
+  const k=Math.min(1,maxSide/Math.max(w,h));
+  const c=document.createElement('canvas');c.width=Math.round(w*k);c.height=Math.round(h*k);
+  const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(src,0,0,c.width,c.height);
+  return new Promise(res=>c.toBlob(res,'image/jpeg',.9));
+}
+async function imgBlob(file){
+  const bm=await createImageBitmap(file);
+  const b=await toBlob(bm,bm.width,bm.height,2000);return {blob:b,url:URL.createObjectURL(b)};
+}
+
+async function readFile(it){
+  const f=it.f,n=f.name.toLowerCase(),ext=n.split('.').pop();
+  if(/^image\//.test(f.type)||['png','jpg','jpeg','webp','gif','bmp'].includes(ext)){
+    const {blob,url}=await imgBlob(f);
+    const im=document.createElement('img');im.className='thumb';im.src=url;it.el.insertBefore(im,it.out);
+    return {jobs:[{images:[blob],body:'(Nội dung nằm trong ảnh đính kèm. Hãy đọc toàn bộ chữ trong ảnh và dịch.)'}]};
+  }
+  if(ext==='pdf'){
+    const pdf=await pdfjsLib.getDocument({data:new Uint8Array(await f.arrayBuffer())}).promise;
+    const pages=[];let total=0;
+    for(let p=1;p<=pdf.numPages;p++){
+      const pg=await pdf.getPage(p),tc=await pg.getTextContent();
+      let s='',lastY=null;
+      for(const t of tc.items){const y=t.transform[5];if(lastY!==null&&Math.abs(y-lastY)>3)s+='\n';else if(s&&!/\s$/.test(s))s+=' ';s+=t.str;lastY=y}
+      pages.push(s.trim());total+=s.trim().length;
+    }
+    const jobs=[];
+    if(total/pdf.numPages>=40){
+      let buf='';
+      pages.forEach((t,i)=>{
+        const seg='=== Trang '+(i+1)+' ===\n'+t+'\n';
+        if(buf.length+seg.length>5500&&buf){jobs.push({body:buf});buf=''}
+        if(seg.length>5500){chunk(seg,5500).forEach(c=>jobs.push({body:c}))}else buf+=seg;
+      });
+      if(buf.trim())jobs.push({body:buf});
+    }else{
+      for(let p=1;p<=pdf.numPages;p++){
+        jobs.push({pdfPage:p,body:'(Đây là trang '+p+' của tài liệu scan, nội dung nằm trong ảnh đính kèm. Bắt đầu bằng dòng "=== Trang '+p+' ===", rồi đọc và dịch toàn bộ chữ.)',lazy:async()=>{const pg=await pdf.getPage(p),vp=pg.getViewport({scale:1.6});const c=document.createElement('canvas');c.width=vp.width;c.height=vp.height;await pg.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;return toBlob(c,c.width,c.height,2000)}});
+      }
+    }
+    return {jobs};
+  }
+  let text='';
+  if(ext==='docx'){text=(await mammoth.extractRawText({arrayBuffer:await f.arrayBuffer()})).value}
+  else if(['xlsx','xls','xlsm','ods'].includes(ext)){
+    const wb=XLSX.read(await f.arrayBuffer(),{type:'array'});
+    text=wb.SheetNames.map(s=>'=== Sheet: '+s+' ===\n'+XLSX.utils.sheet_to_csv(wb.Sheets[s],{FS:' | '})).join('\n\n');
+  }else if(ext==='pptx'){
+    const z=await JSZip.loadAsync(await f.arrayBuffer());
+    const sl=Object.keys(z.files).filter(k=>/^ppt\/slides\/slide\d+\.xml$/.test(k)).sort((a,b)=>parseInt(a.match(/\d+/)[0])-parseInt(b.match(/\d+/)[0]));
+    const out=[];
+    for(const k of sl){const x=await z.file(k).async('string');const paras=[...x.matchAll(/<a:p[ >][\s\S]*?<\/a:p>/g)].map(m=>[...m[0].matchAll(/<a:t[^>]*>([\s\S]*?)<\/a:t>/g)].map(t=>t[1]).join('')).filter(Boolean);
+      out.push('=== Slide '+k.match(/\d+/)[0]+' ===\n'+paras.join('\n').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&apos;/g,"'"))}
+    text=out.join('\n\n');
+  }else if(['doc','ppt','rtf','odt'].includes(ext)&&ext!=='rtf'){
+    throw new Error('Định dạng .'+ext+' cũ chưa đọc được. Hãy lưu lại thành .docx / .pptx rồi thử lại.');
+  }else{
+    text=await f.text();
+    if(ext==='html'||ext==='htm'){const d=new DOMParser().parseFromString(text,'text/html');d.querySelectorAll('script,style').forEach(e=>e.remove());text=d.body?d.body.innerText||d.body.textContent:text}
+  }
+  if(!text.trim())throw new Error('Không đọc được nội dung văn bản trong file này.');
+  return {jobs:chunk(text,5500).map(c=>({body:c}))};
+}
+
+async function run(){
+  if(running||!sample)return;
+  running=true;sync();note.style.display='none';say('Đang dịch, chờ mình xíu nha…');
+  for(const it of items){
+    if(it.state!=='wait')continue;
+    if(it.cancel)break;
+    it.state='run';it.tag.className='tag';it.tag.textContent='Đang đọc file…';it.out.hidden=false;it.out.textContent='';it.bar.style.width='0';
+    status.textContent='Đang dịch: '+it.f.name;
+    try{
+      const {jobs}=await readFile(it);
+      let acc='';
+      for(let i=0;i<jobs.length;i++){
+        if(it.cancel)throw {code:'cancelled'};
+        const j=jobs[i];it.tag.textContent='Đang dịch '+(i+1)+'/'+jobs.length+'…';
+        let imgs=j.images;
+        if(j.lazy)imgs=[await j.lazy()];
+        const base=acc?acc+'\n\n':'';
+        const t=await ask(j.body,imgs,it,base);
+        acc=base+t;it.out.textContent=acc;it.bar.style.width=Math.round((i+1)/jobs.length*100)+'%';
+      }
+      it.text=acc;it.state='done';it.tag.className='tag ok';it.tag.textContent='Hoàn tất';
+      ['cp','d1','d2'].forEach(c=>it.el.querySelector('.'+c).hidden=false);
+    }catch(e){
+      it.state=(e&&e.code==='cancelled')?'wait':'fail';
+      if(e&&e.text){it.text=it.out.textContent}
+      it.tag.className='tag er';it.tag.textContent=(e&&e.code)?errText(e):('Lỗi: '+(e&&e.message||e));
+      if(it.state==='wait')it.cancel=false;
+      if(e&&e.code==='not_granted'){showNote(ERR.not_granted);break}
+      if(e&&e.code==='rate_limited'){showNote(ERR.rate_limited);it.state='wait';break}
+      if(e&&e.code==='cancelled'){break}
+    }
+  }
+  items.forEach(i=>i.cancel=false);
+  running=false;ctl=null;status.textContent='';say('Dịch xong rồi, giỏi quá!');sync();
+}
+})();
+</script>
+</body>
+</html>
